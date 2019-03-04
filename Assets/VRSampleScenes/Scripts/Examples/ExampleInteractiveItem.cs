@@ -59,7 +59,7 @@ namespace VRStandardAssets.Examples
         private void HandleClick()
         {
             Debug.Log("Show click state");
-            ScoreScript.scoreValue += 10;
+//            ScoreScript.scoreValue += 10;
             GetComponent<AudioSource>().Play();
             m_Renderer.material = m_ClickedMaterial;
         }

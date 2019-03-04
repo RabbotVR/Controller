@@ -100,7 +100,7 @@ public class JoyStickerController : MonoBehaviour {
 		}
 
 		if( frontMove ){
-			playerObj.transform.position = new Vector3( tranf.position.x-(2f*Time.deltaTime),   tranf.position.y,  tranf.position.z+(2f*Time.deltaTime));
+			playerObj.transform.position = new Vector3( tranf.position.x,   tranf.position.y,  tranf.position.z+(2f*Time.deltaTime));
 			if( OnCommandMove != null ){
 				OnCommandMove( playerObj.transform.position );
 			}

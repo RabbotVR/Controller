@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour {
 	
 			Dictionary<string, string> data = new Dictionary<string, string>();
 			data["name"] = LoginPanel.inputField.text;
-			Vector3 position  = new Vector3(0,0,0);
+			Vector3 position  = new Vector3(-4,0,-4);
 			data["position"] = position.x+","+position.y+","+position.z;
 			socketIO.Emit("PLAY", new JSONObject(data));
 
