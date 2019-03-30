@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/MainMenu.unity
     guid: 5c2791a5216f44146820d02007fdba7c
   - enabled: 1
-    path: Assets/ARGameScene.unity
-    guid: 44cc71596e14f4642ac420a72847a3fe
+    path: Assets/controller.unity
+    guid: 7ac0eddc6cdc0714085df4898b79b618
   m_configObjects: {}
