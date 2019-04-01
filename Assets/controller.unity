@@ -12527,7 +12527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f2c2423cd8b498fb8d19f3ff06f4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 300
+  maxTime: 10
   timesUpText: {fileID: 1997748420}
   CountIsTrigger: 0
 --- !u!114 &654590778

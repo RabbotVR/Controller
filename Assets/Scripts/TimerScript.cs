@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
     Image timerBar;
-    public float maxTime = 180f;
+    public float maxTime = 300f;
     float timeLeft;
     public GameObject timesUpText;
     public bool CountIsTrigger = false;
@@ -41,6 +42,7 @@ public class TimerScript : MonoBehaviour
         {
             timesUpText.SetActive(true);
             Time.timeScale = 0;
+            SceneManager.LoadScene("EndScene");
         }
     }
 }
