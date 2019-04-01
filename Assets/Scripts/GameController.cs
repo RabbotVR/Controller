@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour {
 	public SocketIOComponent socketIO;
 	public Player	playerGameObj;
     public Image RabbotLoc;
+    public TimerScript timerScript;
 
 	void Start () {
 	
@@ -56,6 +57,7 @@ public class GameController : MonoBehaviour {
 			data["position"] = position.x+","+position.y+","+position.z;
 			socketIO.Emit("PLAY", new JSONObject(data));
             RabbotLoc.enabled = true;
+            timerScript.CountTrigger();
 
 		}else{
 			LoginPanel.inputField.text = "Please enter your name again ";
