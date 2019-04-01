@@ -77,7 +77,7 @@ public class JoyStickerController : MonoBehaviour {
 		Transform tranf = playerObj.transform;
 
 		if( leftMove ){
-			playerObj.transform.position = new Vector3( tranf.position.x-(2f*Time.deltaTime),   tranf.position.y,  tranf.position.z);
+			playerObj.transform.position = new Vector3( tranf.position.x-(5f*Time.deltaTime),   tranf.position.y,  tranf.position.z);
 
 			if( OnCommandMove != null ){
 				OnCommandMove( playerObj.transform.position );
@@ -86,21 +86,21 @@ public class JoyStickerController : MonoBehaviour {
 		}
 
 		if( rightMove ){
-			playerObj.transform.position = new Vector3( tranf.position.x+(2f*Time.deltaTime),   tranf.position.y,  tranf.position.z);
+			playerObj.transform.position = new Vector3( tranf.position.x+(5f*Time.deltaTime),   tranf.position.y,  tranf.position.z);
 			if( OnCommandMove != null ){
 				OnCommandMove( playerObj.transform.position );
 			}
 		}
 
 		if( backMove ){
-			playerObj.transform.position = new Vector3( tranf.position.x,   tranf.position.y,  tranf.position.z-(2f*Time.deltaTime));
+			playerObj.transform.position = new Vector3( tranf.position.x,   tranf.position.y,  tranf.position.z-(5f*Time.deltaTime));
 			if( OnCommandMove != null ){
 				OnCommandMove( playerObj.transform.position );
 			}
 		}
 
 		if( frontMove ){
-			playerObj.transform.position = new Vector3( tranf.position.x,   tranf.position.y,  tranf.position.z+(2f*Time.deltaTime));
+			playerObj.transform.position = new Vector3( tranf.position.x,   tranf.position.y,  tranf.position.z+(5f*Time.deltaTime));
 			if( OnCommandMove != null ){
 				OnCommandMove( playerObj.transform.position );
 			}

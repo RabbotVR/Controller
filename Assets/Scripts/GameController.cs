@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using UnityEngine.UI;
 using SocketIO;
 
 public class GameController : MonoBehaviour {
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour {
 	public JoyStickerController JoyStick;
 	public SocketIOComponent socketIO;
 	public Player	playerGameObj;
+    public Image RabbotLoc;
 
 	void Start () {
 	
@@ -23,6 +25,7 @@ public class GameController : MonoBehaviour {
 		StartCoroutine( "CalltoServer" );
 		LoginPanel.plaBtn.onClick.AddListener(OnClickPlayBtn);
 		JoyStick.OnCommandMove += OnCommandMove;
+        RabbotLoc.enabled = false;
 	}
 
 	void OnCommandMove (Vector3 vec3)
@@ -52,7 +55,7 @@ public class GameController : MonoBehaviour {
 			Vector3 position  = new Vector3(-4,0,-4);
 			data["position"] = position.x+","+position.y+","+position.z;
 			socketIO.Emit("PLAY", new JSONObject(data));
-
+            RabbotLoc.enabled = true;
 
 		}else{
 			LoginPanel.inputField.text = "Please enter your name again ";

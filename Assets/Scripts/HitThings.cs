@@ -8,7 +8,7 @@ public class HitThings : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         scoreSound.Play();
-        ScoreScript.theScore += 50;
+        ScoreScript.theScore += 10;
         //Debug.Log("I Touched You");
     }
 }
