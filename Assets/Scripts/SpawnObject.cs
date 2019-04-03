@@ -8,21 +8,26 @@ public class SpawnObject : MonoBehaviour
 
     public Vector3 center;
     public Vector3 size;
+    public bool SpawnIsTrigger = false;
+    private float nextActionTime = 0.0f;
+    public float period = 10.0f; //Time period to spawn the star
 
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //SpawnStar();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q))
-            SpawnStar();
+        if (SpawnIsTrigger == true)
+        {
+            if (Time.time > nextActionTime)
+            {
+                nextActionTime += period;
+                SpawnStar();
+            }
+        }
+    }
+
+    public void SpawnTrigger(){
+        SpawnIsTrigger = true;
     }
 
     public void SpawnStar(){

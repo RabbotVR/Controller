@@ -5,7 +5,12 @@ using UnityEngine;
 public class GetPionts : MonoBehaviour
 {
     public AudioSource scoreSound;
-    void OnTriggerEnter(Collider other)
+
+	private void Start()
+	{
+        scoreSound = GameObject.Find("Collect").GetComponent<AudioSource>();
+	}
+	void OnTriggerEnter(Collider other)
     {
         scoreSound.Play();
         ScoreScript.theScore += 10;
