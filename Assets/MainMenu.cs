@@ -10,6 +10,9 @@ public class MainMenu : MonoBehaviour
     public void PlayGame(){
         SceneManager.LoadScene("controller");
     }
+    public void BackToMain(){
+        SceneManager.LoadScene("MainMenu"); 
+    }
 
 
 }

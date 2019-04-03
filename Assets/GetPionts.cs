@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitThings : MonoBehaviour
+public class GetPionts : MonoBehaviour
 {
     public AudioSource scoreSound;
     void OnTriggerEnter(Collider other)
     {
         scoreSound.Play();
-        ScoreScript.theScore -= 10;
-        //Debug.Log("I Touched You");
+        ScoreScript.theScore += 10;
+        Destroy(gameObject);
+     
     }
 }
