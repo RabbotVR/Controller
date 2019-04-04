@@ -48,22 +48,20 @@ public class GameController : MonoBehaviour {
 
 	}
 
+    void SendUserName(){
+        Dictionary<string, string> data = new Dictionary<string, string>();
+        data["name"] = "ScientistB";
+        Vector3 position = new Vector3(-4, 0, -4);
+        data["position"] = position.x+","+position.y+","+position.z;
+        socketIO.Emit("PLAY", new JSONObject(data));
+    }
+
 	void OnClickPlayBtn ()
 	{
-		if(LoginPanel.inputField.text != ""  ){
-	
-			Dictionary<string, string> data = new Dictionary<string, string>();
-			data["name"] = LoginPanel.inputField.text;
-			Vector3 position  = new Vector3(-4,0,-4);
-			data["position"] = position.x+","+position.y+","+position.z;
-			socketIO.Emit("PLAY", new JSONObject(data));
-            RabbotLoc.enabled = true;
-            timerScript.CountTrigger();
-            spawnObject.SpawnTrigger();
-
-		}else{
-			LoginPanel.inputField.text = "Please enter your name again ";
-		}
+        RabbotLoc.enabled = true;
+        timerScript.CountTrigger();
+        spawnObject.SpawnTrigger();
+        SendUserName();
 	}
 
 	void onUserPlay (SocketIOEvent obj)
